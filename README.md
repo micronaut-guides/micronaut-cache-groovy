@@ -1,4 +1,4 @@
 # Micronaut Cache #
 
-Guide: http://guides.micronaut.io/micronaut-cache/guide/index.html
+Guide: http://guides.micronaut.io/micronaut-cache-groovy/guide/index.html
 
