@@ -1,0 +1,12 @@
+We can verify that the cache works as expected:
+
+[source, groovy]
+.src/test/groovy/micronaut/example/micronaut/NewsServiceSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/micronaut/NewsServiceSpec.groovy[]
+----
+
+<1> Indicates that a spec's feature methods should be run sequentially in their declared order.
+<2> Annotation used to define a Micronaut test
+<3> Inject `NewsService` bean.
+<4> Timeout annotation fails a test if its execution exceeds a given duration. It helps us verify that we are leaveraging the cache.

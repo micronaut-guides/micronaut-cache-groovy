@@ -1,0 +1,23 @@
+Create a controller which engages the previous service:
+
+[source, groovy]
+.src/main/groovy/micronaut/example/micronaut/News.groovy
+----
+include::{sourceDir}/src/main/groovy/example/micronaut/News.groovy[]
+----
+
+[source, groovy]
+.src/main/groovy/micronaut/example/micronaut/NewsController.groovy
+----
+include::{sourceDir}/src/main/groovy/example/micronaut/NewsController.groovy[]
+----
+
+Add a test:
+
+[source, groovy]
+.src/test/groovy/micronaut/example/micronaut/NewsControllerSpec.groovy
+----
+include::{sourceDir}/src/test/groovy/example/micronaut/NewsControllerSpec.groovy[]
+----
+
+<1> We call the endpoint twice and verify with the `@Timeout` annotation that the cache is being used.
