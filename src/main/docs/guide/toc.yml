@@ -9,3 +9,5 @@ writingTheApp:
   test: Test the Cache
   controller: Controller
 next: Where To Go From Here?
+help:
+  title: Help with Micronaut
