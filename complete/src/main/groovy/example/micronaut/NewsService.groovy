@@ -29,7 +29,9 @@ class NewsService {
     @CachePut(parameters = ["month"]) // <5>
     List<String> addHeadline(Month month, String headline) {
         if (headlines.containsKey(month)) {
-            headlines.put(month, [headline])
+            List<String> lines = headlines[month]
+            lines << headline
+            headlines.put(month, lines)
         } else {
             headlines[month] = [headline]
         }
