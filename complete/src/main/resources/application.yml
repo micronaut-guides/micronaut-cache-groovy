@@ -4,3 +4,7 @@ micronaut:
     headlines: # <1>
       charset: 'UTF-8'
 #end::config[]
+---
+micronaut:
+  application:
+    name: complete

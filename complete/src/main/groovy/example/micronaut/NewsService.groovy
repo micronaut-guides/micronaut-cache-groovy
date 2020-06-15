@@ -1,14 +1,15 @@
 package example.micronaut
 
+import groovy.transform.CompileStatic
 import io.micronaut.cache.annotation.CacheConfig
 import io.micronaut.cache.annotation.CacheInvalidate
 import io.micronaut.cache.annotation.CachePut
 import io.micronaut.cache.annotation.Cacheable
-
 import javax.inject.Singleton
 import java.time.Month
 import java.util.concurrent.TimeUnit
 
+@CompileStatic
 @Singleton // <1>
 @CacheConfig("headlines") // <2>
 class NewsService {
@@ -28,7 +29,7 @@ class NewsService {
     @CachePut(parameters = ["month"]) // <5>
     List<String> addHeadline(Month month, String headline) {
         if (headlines.containsKey(month)) {
-            headlines[month] += [headline]
+            headlines.put(month, [headline])
         } else {
             headlines[month] = [headline]
         }
@@ -38,7 +39,9 @@ class NewsService {
     @CacheInvalidate(parameters = ["month"]) // <6>
     void removeHeadline(Month month, String headline) {
         if (headlines.containsKey(month)) {
-            headlines[month] -= [headline]
+            List<String> lines = headlines[month]
+            lines -= headline
+            headlines.put(month, lines)
         }
     }
 }

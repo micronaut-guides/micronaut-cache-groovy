@@ -1,4 +1,12 @@
-In this sample application, we cache news headlines. Configure your caches in `application.yml`:
+In this sample application, we cache news headlines. Add `micronaut-cache-core` dependency:
+
+[source, yml]
+.build.gradle
+----
+include::{sourceDir}/build.gradle[tag=cache]
+----
+
+Configure your caches in `application.yml`:
 
 [source, yml]
 .src/main/resources/application.yml

@@ -1,10 +1,12 @@
 package example.micronaut
 
+import groovy.transform.CompileStatic
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Get
 
 import java.time.Month
 
+@CompileStatic
 @Controller
 class NewsController {
 

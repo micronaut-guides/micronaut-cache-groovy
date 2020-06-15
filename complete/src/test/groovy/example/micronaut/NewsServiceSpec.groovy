@@ -61,7 +61,7 @@ class NewsServiceSpec extends Specification {
     }
 
     @Timeout(1) // <4>
-    void novemberCacheWasUpdatedByCachePutAndThusTheValueIsRetrievedFromTheCache() {
+    void "november cache was updated by cache put and thus the value is retrieved from the cache"() {
         when:
         List<String> headlines = newsService.headlines(Month.NOVEMBER)
 

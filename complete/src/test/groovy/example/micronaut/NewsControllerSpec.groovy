@@ -28,7 +28,9 @@ class NewsControllerSpec extends Specification {
         String expected = "Micronaut AOP: Awesome flexibility without the complexity"
 
         when:
-        HttpRequest request = HttpRequest.GET(UriBuilder.of("/").path(Month.OCTOBER.toString()).build())
+        HttpRequest request = HttpRequest.GET(UriBuilder.of("/")
+                .path(Month.OCTOBER.toString())
+                .build())
         News news = client.toBlocking().retrieve(request, News)
 
         then:
